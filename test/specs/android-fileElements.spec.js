@@ -7,6 +7,15 @@ describe('Android Element Tests', ()=>{
         // Assertion
         const actionBar = await $('~Action Bar');
         await expect(actionBar).toBeExisting();
+    })
 
+    it.only('Find element by class name', async() =>{
+        // find element by class name
+        const className = await $('android.widget.TextView');
+        console.log(await className.getText());
+
+        // Assertion
+        await expect(className).toHaveText('API Demos');
+        
     })
 })
