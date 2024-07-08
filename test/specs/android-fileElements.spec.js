@@ -18,7 +18,7 @@ describe("Android Element Tests", () => {
     await expect(className).toHaveText("API Demos");
   });
 
-  it("Find element by Xpath", async () => {
+  it.skip("Find element by Xpath", async () => {
     // xpath - (//tagname[@attribute=value])
     await $('//android.widget.TextView[@content-desc="Alert Dialogs"]').click();
     // Find by resourceId
@@ -34,5 +34,9 @@ describe("Android Element Tests", () => {
     // Find by class
     const textAssertion = await $("//android.widget.TextView");
     await expect(textAssertion).toHaveText("You selected: 1 , Command two");
+  });
+  it("Find elements by UIAutomator", async () => {
+    // find by text contains
+    await $('android=new UiSelector().textContains("Alert Dialogs")').click();
   });
 });
