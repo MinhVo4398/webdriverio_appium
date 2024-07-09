@@ -65,6 +65,6 @@ describe("Android Element Tests", () => {
       actualList.push(await element.getText());
     }
     // assert the list
-    await expect(actualList).toHaveValue(expectedList);
+    await expect(actualList).toEqual(expectedList);
   });
 });
