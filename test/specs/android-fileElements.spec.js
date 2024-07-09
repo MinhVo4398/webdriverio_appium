@@ -40,7 +40,7 @@ describe("Android Element Tests", () => {
     await $('android=new UiSelector().textContains("Alert Dialogs")').click();
   });
 
-  it.only("Find multiple elements", async () => {
+  it("Find multiple elements", async () => {
     const expectedList = [
       "API Demos",
       "Access'ibility",
@@ -66,5 +66,23 @@ describe("Android Element Tests", () => {
     }
     // assert the list
     await expect(actualList).toEqual(expectedList);
+  });
+
+  it.only("Working with text field", async () => {
+    // access the auto complete screen
+    await $("~Views").click();
+
+    await $('//*[@text="Auto Complete"]').click();
+
+    await $('//android.widget.TextView[@content-desc="1. Screen Top"]').click();
+
+    // Enter country name
+    const textField = await $(
+      '//android.widget.EditText[@resource-id="io.appium.android.apis:id/edit"]'
+    );
+    await textField.addValue("Canada");
+
+    // Verify the country name
+    await expect(textField).toHaveText("Canada");
   });
 });
