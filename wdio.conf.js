@@ -6,7 +6,7 @@ exports.config = {
     
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/android-native*.js'
+        './test/specs/android/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -21,7 +21,7 @@ exports.config = {
         'appium:deviceName': 'emulator-5554',
         'appium:platformVersion': '11.0',
         'appium:automationName': 'UIAutomator2',
-        'appium:app':path.join(process.cwd(),'app/android/ApiDemos-debug.apk')
+        'appium:app':path.join(process.cwd(),'app/android/ColorNote Notepad.apk')
     }],
 
    
