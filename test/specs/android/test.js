@@ -1,5 +1,5 @@
 describe('test', ()=>{
-    it('', ()=>{
-        
+    it('test', async ()=>{
+       await driver.pause();
     })
 })
