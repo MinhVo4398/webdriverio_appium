@@ -18,7 +18,7 @@
     "@wdio/spec-reporter": "^8.39.0",
     "@wdio/visual-service": "^5.1.0",
     "appium": "^2.11.1",
-    "appium-uiautomator2-driver": "^3.7.1",
+    "appium-uiautomator2-driver": "^3.7.2",
     "appium-xcuitest-driver": "^7.23.0",
     "ts-node": "^10.9.2",
     "wdio-wait-for": "^3.0.11"
