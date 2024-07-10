@@ -45,6 +45,15 @@ describe("Android Native Feature Tests", () => {
   it.only("Vertical Scrolling", async()=>{
     await $('~App').click();
     await $('~Activity').click();
-    await $('~Secure Surfaces').click();
+    
+    //scroll to the end (not stable if element)
+    //await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1,5)');
+    
+    // scrollTextIntoView - more stable
+    await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Secure Surfaces")').click();
+    //await $('~Secure Surfaces').click();
+
+    //assertion
+    await expect($('~Secure Dialog')).toExist();
   })
 });
