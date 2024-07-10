@@ -15,7 +15,7 @@ describe("Android Native Feature Tests", () => {
     ).toExist();
   });
 
-  it.only("Working with Dialog Boxes", async () => {
+  it("Working with Dialog Boxes", async () => {
     // access acitivity
     await driver.startActivity(
       "io.appium.android.apis",
@@ -41,4 +41,10 @@ describe("Android Native Feature Tests", () => {
     // Assertion - alert box is no longer visible
     await expect($('//*[@resource-id="android:id/alertTitle"]')).not.toExist();
   });
+
+  it.only("Vertical Scrolling", async()=>{
+    await $('~App').click();
+    await $('~Activity').click();
+    await $('~Secure Surfaces').click();
+  })
 });
