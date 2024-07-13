@@ -5,7 +5,7 @@ exports.config = {
 
   specs: [
     // ToDo: define location for spec files here
-    "./test/specs/ios.spec.js",
+    "./test/specs/ios-findElement.spec.js",
   ],
   // Patterns to exclude.
   exclude: [
