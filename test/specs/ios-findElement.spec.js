@@ -5,7 +5,7 @@ describe('iOS Find Element', ()=>{
         await expect(await driver.getAlertText()).toContain("A Short Title Is Best");
     });
 
-    it.only('find by tag name', async ()=>{
+    it('find by tag name', async ()=>{
         // single element
         console.log(await $('XCUIElementTypeStaticText').getText());
 
@@ -15,7 +15,12 @@ describe('iOS Find Element', ()=>{
         for (const ele of textEls) {
             console.log(await ele.getText());
         }
-    	
-       
     })
+
+    it.only('find element by xpath ', async ()=>{
+        // xpath - (//tagname[@attribute=value])
+        await $('//*[@name="Alert Views"]').click();
+        await $('//*[@label="Simple"]').click();
+        await expect(await driver.getAlertText()).toContain("A Short Title Is Best");
+    } )
 });
