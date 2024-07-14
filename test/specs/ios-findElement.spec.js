@@ -38,7 +38,7 @@ describe("iOS Find Element", () => {
     );
   });
 
-  it.only('find element by predicate string', async ()=>{
+  it('find element by predicate string', async ()=>{
     //const alertText = 'label == "Alert Views"';
     const alertText = 'value BEGINSWITH[c]  "alert"';
     await $(`-ios predicate string:${alertText}`).click();
@@ -46,5 +46,19 @@ describe("iOS Find Element", () => {
     await expect(await driver.getAlertText()).toContain(
       "A Short Title Is Best"
     );
+  })
+
+  it.only('Exercise: Enter text in the search field', async ()=>{
+    await $('~Search').click();
+    await $('~Default').click();
+    await $('//XCUIElementTypeSearchField').addValue("I love this course!");
+    await expect($('//XCUIElementTypeSearchField')).toHaveAttr("value");
+
+    await $('~Clear text').click();
+    await expect($('//XCUIElementTypeSearchField')).not.toHaveAttr("value");
+    
+
+
+
   })
 });
