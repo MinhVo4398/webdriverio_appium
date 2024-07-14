@@ -49,7 +49,6 @@ describe("iOS Native Features", () => {
     await greenPicker.addValue('0')
     await bluePicker.addValue('125')
     
-
     await driver.pause(2000);
   });
 });
