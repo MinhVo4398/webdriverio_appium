@@ -56,9 +56,5 @@ describe("iOS Find Element", () => {
 
     await $('~Clear text').click();
     await expect($('//XCUIElementTypeSearchField')).not.toHaveAttr("value");
-    
-
-
-
   })
 });
